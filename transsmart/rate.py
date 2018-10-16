@@ -9,8 +9,8 @@ ENDPOINT = ENVIRONMENT_BASE_URL + VERSION_API + '/rates/{account}'
 
 class Rate:
 
-    def calculate(self, account, **kwargs):
+    def calculate(self, account, data):
         response = post(ENDPOINT.format(account=account),
-            params=kwargs,
+            json=data,
             headers=self.headers)
         return response
