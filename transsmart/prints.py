@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from requests import post
+from requests import get
 
 
 class Prints:
@@ -13,7 +13,7 @@ class Prints:
         self.headers = headers
 
     def prints(self, account, reference, **kwargs):
-        response = post(
+        response = get(
             self.base_url + self.endpoint.format(
                 account=account,
                 reference=reference),
